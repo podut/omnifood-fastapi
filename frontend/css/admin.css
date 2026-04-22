@@ -345,3 +345,127 @@ body {
   width: auto;
   padding: 1rem 2.4rem;
 }
+
+/* ===== RESPONSIVE ===== */
+
+/* Tabletă — 75em = 1200px */
+@media (max-width: 75em) {
+  .grila-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobil mare — 48em = 768px */
+@media (max-width: 48em) {
+  .login-card {
+    padding: 3.2rem 2.4rem;
+  }
+
+  .login-titlu {
+    font-size: 2.4rem;
+  }
+
+  .admin-antet {
+    padding: 1.2rem 1.6rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .admin-titlu {
+    font-size: 1.6rem;
+  }
+
+  .admin-antet-actiuni {
+    gap: 0.8rem;
+  }
+
+  .btn-secundar,
+  .btn-logout {
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .admin-main {
+    padding: 2rem 1.6rem;
+    gap: 2rem;
+  }
+
+  .sectiune-card {
+    padding: 2rem 1.6rem;
+  }
+
+  .sectiune-titlu {
+    font-size: 1.8rem;
+  }
+
+  .grila-form {
+    grid-template-columns: 1fr;
+  }
+
+  .camp--larg,
+  .camp--checkbox {
+    grid-column: 1 / -1;
+  }
+
+  .tabel-antet {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  /* Ascunde coloanele mai puțin importante pe mobil */
+  .tabel-meniuri th:nth-child(2),
+  .tabel-meniuri td:nth-child(2) {
+    display: none;
+  }
+
+  .tabel-meniuri th,
+  .tabel-meniuri td {
+    padding: 1rem 0.8rem;
+    font-size: 1.3rem;
+  }
+
+  .btn-edit,
+  .btn-sterge {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.4rem;
+    text-align: center;
+  }
+
+  .modal-card {
+    padding: 2rem 1.6rem;
+  }
+
+  .modal-actiuni {
+    flex-direction: column;
+  }
+
+  .btn-primar--mic {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Mobil mic — 30em = 480px */
+@media (max-width: 30em) {
+  .login-card {
+    padding: 2.4rem 1.6rem;
+    border-radius: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ecran-login {
+    padding: 0;
+  }
+
+  /* Ascunde și coloana categorie pe ecrane foarte mici */
+  .tabel-meniuri th:nth-child(4),
+  .tabel-meniuri td:nth-child(4) {
+    display: none;
+  }
+}
