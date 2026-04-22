@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Omnifood este un abonament alimentar bazat pe inteligență artificială care te va ajuta să mănânci sănătos din nou, 365 de zile pe an. Este adaptat gusturilor și nevoilor tale nutriționale."
+    />
+
+    <!-- Include întotdeauna această linie de cod!!! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+    <script defer src="js/script.js"></script>
+
+    <title>Omnifood &mdash; Nu mai gătești niciodată!</title>
+  </head>
+  <body>
+    <header class="antet">
+      <a href="#">
+        <img class="logo" alt="Omnifood logo" src="img/omnifood-logo.png" />
+      </a>
+
+      <nav class="nav-principal">
+        <ul class="nav-principal-lista">
+          <li><a class="nav-principal-link" href="#how">Cum funcționează</a></li>
+          <li><a class="nav-principal-link" href="#meals">Meniuri</a></li>
+          <li>
+            <a class="nav-principal-link" href="#testimonials">Testimoniale</a>
+          </li>
+          <li><a class="nav-principal-link" href="#pricing">Prețuri</a></li>
+          <li><a class="nav-principal-link nav-cta" href="#cta">Încearcă gratuit</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-nav-mobil">
+        <ion-icon class="icon-nav-mobil" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-nav-mobil" name="close-outline"></ion-icon>
+      </button>
+    </header>
+
+    <main>
+      <section class="sectiune-erou">
+        <div class="erou">
+          <div class="erou-caseta-text">
+            <h1 class="titlu-principal">
+              O masă sănătoasă livrată la ușa ta, în fiecare zi
+            </h1>
+            <p class="erou-descriere">
+              Abonamentul alimentar inteligent, 365 de zile pe an, care te va
+              ajuta să mănânci sănătos din nou. Adaptat gusturilor și nevoilor
+              tale nutriționale.
+            </p>
+            <a href="#cta" class="btn btn--plin margine-dreapta-sm"
+              >Începe să mănânci sănătos</a
+            >
+
+            <a href="#how" class="btn btn--contur">Află mai multe &darr;</a>
+            <div class="mese-livrate">
+              <div class="imagini-livrate">
+                <img src="img/customers/customer-1.jpg" alt="Fotografie client" />
+                <img src="img/customers/customer-2.jpg" alt="Fotografie client" />
+                <img src="img/customers/customer-3.jpg" alt="Fotografie client" />
+                <img src="img/customers/customer-4.jpg" alt="Fotografie client" />
+                <img src="img/customers/customer-5.jpg" alt="Fotografie client" />
+                <img src="img/customers/customer-6.jpg" alt="Fotografie client" />
+              </div>
+              <p class="text-livrat">
+                <span>250.000+</span> mese livrate anul trecut!
+              </p>
+            </div>
+          </div>
+          <div class="erou-caseta-img">
+            <picture>
+              <source srcset="img/hero.webp" type="image/webp" />
+              <source srcset="img/hero-min.png" type="image/png" />
+
+              <img
+                src="img/hero-min.png"
+                class="erou-img"
+                alt="Femeie savurând mâncare, mese în recipiente și boluri cu mâncare pe masă"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="sectiune-prezentati">
+        <div class="container">
+          <h2 class="titlu-prezentati-in">Prezenți în</h2>
+          <div class="logouri">
+            <img src="img/logos/techcrunch.png" alt="Techcrunch logo" />
+            <img
+              src="img/logos/business-insider.png"
+              alt="Business Insider logo"
+            />
+            <img
+              src="img/logos/the-new-york-times.png"
+              alt="The New York Times logo"
+            />
+            <img src="img/logos/forbes.png" alt="Forbes logo" />
+            <img src="img/logos/usa-today.png" alt="USA Today logo" />
+          </div>
+        </div>
+      </section>
+
+      <section class="sectiune-cum" id="how">
+        <div class="container">
+          <span class="subtitlu">Cum funcționează</span>
+          <h2 class="titlu-secundar">
+            Doza ta zilnică de sănătate în 3 pași simpli
+          </h2>
+        </div>
+
+        <div class="container grila grila--2-col grila--centru-v">
+          <!-- PASUL 01 -->
+          <div class="pas-caseta-text">
+            <p class="pas-numar">01</p>
+            <h3 class="titlu-tertiar">
+              Spune-ne ce îți place (și ce nu)
+            </h3>
+            <p class="pas-descriere">
+              Nu mai pierde timp gândindu-te ce să mănânci! Omnifood AI va crea
+              un plan săptămânal de mese 100% personalizat doar pentru tine. Se
+              asigură că primești toți nutrienții și vitaminele de care ai
+              nevoie, indiferent de dieta pe care o urmezi!
+            </p>
+          </div>
+
+          <div class="pas-caseta-img">
+            <img
+              src="img/app/app-screen-1.png"
+              class="pas-img"
+              alt="Ecran aplicație iPhone
+            selectare preferințe"
+            />
+          </div>
+
+          <!-- PASUL 02 -->
+          <div class="pas-caseta-img">
+            <img
+              src="img/app/app-screen-2.png"
+              class="pas-img"
+              alt="Ecran aplicație iPhone
+            aprobare plan mese"
+            />
+          </div>
+          <div class="pas-caseta-text">
+            <p class="pas-numar">02</p>
+            <h3 class="titlu-tertiar">Aprobă planul săptămânal de mese</h3>
+            <p class="pas-descriere">
+              O dată pe săptămână, aprobă planul de mese generat pentru tine de
+              Omnifood AI. Poți schimba ingredientele, înlocui mese întregi sau
+              chiar adăuga propriile tale rețete.
+            </p>
+          </div>
+
+          <!-- PASUL 03 -->
+          <div class="pas-caseta-text">
+            <p class="pas-numar">03</p>
+            <h3 class="titlu-tertiar">Primește mesele la ora convenabilă</h3>
+            <p class="pas-descriere">
+              Cei mai buni bucătari din oraș vor găti meniul tău selectat în
+              fiecare zi, iar noi îl vom livra la ușa ta oricând ți se
+              potrivește. Poți schimba programul și adresa de livrare zilnic!
+            </p>
+          </div>
+          <div class="pas-caseta-img">
+            <img
+              src="img/app/app-screen-3.png"
+              class="pas-img"
+              alt="Ecran aplicație iPhone
+            livrare"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="sectiune-meniuri" id="meals">
+        <div class="container text-centrat">
+          <span class="subtitlu">Meniuri</span>
+          <h2 class="titlu-secundar">
+            Omnifood AI alege din peste 5.000 de rețete
+          </h2>
+        </div>
+
+        <div class="container grila grila--3-col margine-jos-md" id="grila-meniuri">
+          <div class="masa">
+            <img
+              src="img/meals/meal-1.jpg"
+              class="masa-img"
+              alt="Gyoza Japoneze"
+            />
+            <div class="masa-continut">
+              <div class="masa-etichete">
+                <span class="eticheta eticheta--vegetarian">Vegetarian</span>
+              </div>
+              <p class="masa-titlu">Gyoza Japoneze</p>
+              <ul class="masa-atribute">
+                <li class="masa-atribut">
+                  <ion-icon class="masa-icon" name="flame-outline"></ion-icon>
+                  <span><strong>650</strong> calorii</span>
+                </li>
+                <li class="masa-atribut">
+                  <ion-icon
+                    class="masa-icon"
+                    name="restaurant-outline"
+                  ></ion-icon>
+                  <span>NutriScore &reg; <strong>74</strong></span>
+                </li>
+                <li class="masa-atribut">
+                  <ion-icon class="masa-icon" name="star-outline"></ion-icon>
+                  <span><strong>4.9</strong> recenzii (537)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="masa">
+            <img
+              src="img/meals/meal-2.jpg"
+              class="masa-img"
+              alt="Salată de Avocado"
+            />
+            <div class="masa-continut">
+              <div class="masa-etichete">
+                <span class="eticheta eticheta--vegan">Vegan</span>
+                <span class="eticheta eticheta--paleo">Paleo</span>
+              </div>
+              <p class="masa-titlu">Salată de Avocado</p>
+              <ul class="masa-atribute">
+                <li class="masa-atribut">
+                  <ion-icon class="masa-icon" name="flame-outline"></ion-icon>
+                  <span><strong>400</strong> calorii</span>
+                </li>
+                <li class="masa-atribut">
+                  <ion-icon
+                    class="masa-icon"
+                    name="restaurant-outline"
+                  ></ion-icon>
+                  <span>NutriScore &reg; <strong>92</strong></span>
+                </li>
+                <li class="masa-atribut">
+                  <ion-icon class="masa-icon" name="star-outline"></ion-icon>
+                  <span><strong>4.8</strong> recenzii (441)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="diete">
+            <h3 class="titlu-tertiar">Funcționează cu orice dietă:</h3>
+            <ul class="lista">
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Vegetariană</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Vegană</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Pescatariană</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Fără gluten</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Fără lactoză</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Keto</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Paleo</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Low FODMAP</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Pentru copii</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container toate-retetele">
+          <a href="#" class="link">Vezi toate rețetele &rarr;</a>
+        </div>
+      </section>
+
+      <section class="sectiune-testimoniale" id="testimonials">
+        <div class="container-testimoniale">
+          <span class="subtitlu">Testimoniale</span>
+          <h2 class="titlu-secundar">Odată ce încerci, nu te mai poți întoarce</h2>
+
+          <div class="testimoniale">
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Fotografia clientului Dave Bryson"
+                src="img/customers/dave.jpg"
+              />
+              <blockquote class="testimonial-text">
+                Mese ieftine, sănătoase și delicioase, fără să fie nevoie să
+                comanzi manual! Chiar pare magie.
+              </blockquote>
+              <p class="testimonial-nume">&mdash; Dave Bryson</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Fotografia clientului Ben Hadley"
+                src="img/customers/ben.jpg"
+              />
+              <blockquote class="testimonial-text">
+                Algoritmul AI este incredibil de bun, alege mesele potrivite
+                pentru mine de fiecare dată. E minunat să nu mai te îngrijorezi de mâncare!
+              </blockquote>
+              <p class="testimonial-nume">&mdash; Ben Hadley</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Fotografia clientului Steve Miller"
+                src="img/customers/steve.jpg"
+              />
+              <blockquote class="testimonial-text">
+                Omnifood mi-a salvat viața! Tocmai am început o afacere, deci
+                nu am timp de gătit. Nu aș putea trăi fără mesele mele zilnice acum!
+              </blockquote>
+              <p class="testimonial-nume">&mdash; Steve Miller</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                alt="Fotografia clientei Hannah Smith"
+                src="img/customers/hannah.jpg"
+              />
+              <blockquote class="testimonial-text">
+                Am luat Omnifood pentru toată familia și ne eliberează atât de
+                mult timp! În plus, totul este organic, vegan și fără plastic.
+              </blockquote>
+              <p class="testimonial-nume">&mdash; Hannah Smith</p>
+            </figure>
+          </div>
+        </div>
+
+        <div class="galerie">
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-1.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+            <!-- <figcaption>Caption</figcaption> -->
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-2.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-3.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-4.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-5.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-6.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-7.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-8.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-9.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-10.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-11.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+          <figure class="element-galerie">
+            <img
+              src="img/gallery/gallery-12.jpg"
+              alt="Fotografie cu mâncare
+            aranjată frumos"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="sectiune-preturi" id="pricing">
+        <div class="container">
+          <span class="subtitlu">Prețuri</span>
+          <h2 class="titlu-secundar">
+            Mănâncă sănătos fără să-ți golești buzunarul
+          </h2>
+        </div>
+
+        <div class="container grila grila--2-col margine-jos-md">
+          <div class="plan-preturi plan-preturi--incepator">
+            <header class="plan-antet">
+              <p class="plan-nume">Începător</p>
+              <p class="plan-pret"><span>$</span>399</p>
+              <p class="plan-text">pe lună. Adică doar $13 pe masă!</p>
+            </header>
+            <ul class="lista">
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>1 masă pe zi</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Comandă între 11:00 și 21:00</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Livrare gratuită</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="close-outline"></ion-icon>
+              </li>
+            </ul>
+            <div class="plan-inscriere">
+              <a href="#" class="btn btn--plin">Începe să mănânci sănătos</a>
+            </div>
+          </div>
+
+          <div class="plan-preturi plan-preturi--complet">
+            <header class="plan-antet">
+              <p class="plan-nume">Complet</p>
+              <p class="plan-pret"><span>$</span>649</p>
+              <p class="plan-text">pe lună. Adică doar $11 pe masă!</p>
+            </header>
+            <ul class="lista">
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span><strong>2 mese</strong> pe zi</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Comandă <strong>24/7</strong></span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Livrare gratuită</span>
+              </li>
+              <li class="element-lista">
+                <ion-icon class="icon-lista" name="checkmark-outline"></ion-icon>
+                <span>Acces la cele mai noi rețete</span>
+              </li>
+            </ul>
+            <div class="plan-inscriere">
+              <a href="#" class="btn btn--plin">Începe să mănânci sănătos</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="container grila">
+          <aside class="plan-detalii">
+            Prețurile includ toate taxele aplicabile. Poți anula oricând.
+            Ambele planuri includ următoarele:
+          </aside>
+        </div>
+
+        <div class="container grila grila--4-col">
+          <div class="functionalitate">
+            <ion-icon class="functionalitate-icon" name="infinite-outline"></ion-icon>
+            <p class="functionalitate-titlu">Nu mai gătești niciodată!</p>
+            <p class="functionalitate-text">
+              Abonamentele noastre acoperă 365 de zile pe an, inclusiv
+              sărbătorile importante.
+            </p>
+          </div>
+          <div class="functionalitate">
+            <ion-icon class="functionalitate-icon" name="nutrition-outline"></ion-icon>
+            <p class="functionalitate-titlu">Local și organic</p>
+            <p class="functionalitate-text">
+              Bucătarii noștri folosesc doar produse locale, proaspete și
+              organice pentru a prepara mesele tale.
+            </p>
+          </div>
+          <div class="functionalitate">
+            <ion-icon class="functionalitate-icon" name="leaf-outline"></ion-icon>
+            <p class="functionalitate-titlu">Fără risipă</p>
+            <p class="functionalitate-text">
+              Toți partenerii noștri folosesc doar recipiente reutilizabile
+              pentru a ambala toate mesele tale.
+            </p>
+          </div>
+          <div class="functionalitate">
+            <ion-icon class="functionalitate-icon" name="pause-outline"></ion-icon>
+            <p class="functionalitate-titlu">Pauză oricând</p>
+            <p class="functionalitate-text">
+              Pleci în vacanță? Pune abonamentul pe pauză și îți rambursăm
+              zilele neutilizate.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sectiune-cta" id="cta">
+        <div class="container">
+          <div class="cta">
+            <div class="cta-caseta-text">
+              <h2 class="titlu-secundar">Primește prima masă gratuit!</h2>
+              <p class="cta-text">
+                Mese sănătoase, gustoase și fără bătăi de cap te așteaptă.
+                Începe să mănânci sănătos astăzi. Poți anula sau pune pe pauză
+                oricând. Iar prima masă este din partea noastră!
+              </p>
+
+              <form class="cta-formular" id="formular-cta">
+                <div>
+                  <label for="full-name">Nume complet</label>
+                  <input
+                    id="full-name"
+                    type="text"
+                    placeholder="Ion Popescu"
+                    name="full-name"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="email">Adresă de email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="me@example.com"
+                    name="email"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="select-where">De unde ai auzit de noi?</label>
+                  <select id="select-where" name="select-where" required>
+                    <option value="">Te rugăm alege o opțiune:</option>
+                    <option value="friends">Prieteni și familie</option>
+                    <option value="youtube">Video YouTube</option>
+                    <option value="podcast">Podcast</option>
+                    <option value="ad">Reclamă Facebook</option>
+                    <option value="others">Altele</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="data-livrare">Data primei livrări</label>
+                  <input
+                    id="data-livrare"
+                    type="date"
+                    name="date"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="ora-livrare">Ora livrării</label>
+                  <input
+                    id="ora-livrare"
+                    type="time"
+                    name="time"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="persoane">Număr persoane</label>
+                  <input
+                    id="persoane"
+                    type="number"
+                    name="guests"
+                    min="1"
+                    max="20"
+                    placeholder="2"
+                    required
+                  />
+                </div>
+
+                <button class="btn btn--formular">Înscrie-te acum</button>
+                <p id="mesaj-status" class="mesaj-status" aria-live="polite"></p>
+              </form>
+            </div>
+            <div
+              class="cta-caseta-img"
+              role="img"
+              aria-label="Femeie savurând mâncare"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="subsol">
+      <div class="container grila grila--subsol">
+        <div class="coloana-logo">
+          <a href="#" class="subsol-logo">
+            <img class="logo" alt="Omnifood logo" src="img/omnifood-logo.png" />
+          </a>
+
+          <ul class="linkuri-sociale">
+            <li>
+              <a class="subsol-link" href="#"
+                ><ion-icon class="icon-social" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="subsol-link" href="#"
+                ><ion-icon class="icon-social" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="subsol-link" href="#"
+                ><ion-icon class="icon-social" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+
+          <p class="drepturi-autor">
+            Drepturi de autor &copy; <span class="an">2026</span> Podut Petru.
+            Toate drepturile rezervate.
+          </p>
+        </div>
+
+        <div class="coloana-adresa">
+          <p class="subsol-titlu">Contactează-ne</p>
+          <address class="contacte">
+            <p class="adresa">
+              Baia Mare, Maramureș, România
+            </p>
+            <p>
+              <a class="subsol-link" href="mailto:podutpetru@gmail.com"
+                >podutpetru@gmail.com</a
+              >
+            </p>
+          </address>
+        </div>
+
+        <nav class="coloana-nav">
+          <p class="subsol-titlu">Cont</p>
+          <ul class="subsol-nav">
+            <li><a class="subsol-link" href="#">Creează cont</a></li>
+            <li><a class="subsol-link" href="#">Conectare</a></li>
+            <li><a class="subsol-link" href="#">Aplicație iOS</a></li>
+            <li><a class="subsol-link" href="#">Aplicație Android</a></li>
+          </ul>
+        </nav>
+
+        <nav class="coloana-nav">
+          <p class="subsol-titlu">Companie</p>
+          <ul class="subsol-nav">
+            <li><a class="subsol-link" href="#">Despre Omnifood</a></li>
+            <li><a class="subsol-link" href="#">Pentru afaceri</a></li>
+            <li><a class="subsol-link" href="#">Parteneri de gătit</a></li>
+            <li><a class="subsol-link" href="#">Cariere</a></li>
+          </ul>
+        </nav>
+
+        <nav class="coloana-nav">
+          <p class="subsol-titlu">Resurse</p>
+          <ul class="subsol-nav">
+            <li><a class="subsol-link" href="#">Director de rețete</a></li>
+            <li><a class="subsol-link" href="#">Centru de ajutor</a></li>
+            <li><a class="subsol-link" href="#">Confidențialitate și termeni</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

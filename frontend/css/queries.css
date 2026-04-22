@@ -1,0 +1,356 @@
+/* rem și em NU depind de font-size din html în media queries! În schimb, 1rem = 1em = 16px */
+
+/**************************/
+/* SUB 1344px (Desktop-uri mai mici) */
+/**************************/
+
+@media (max-width: 84em) {
+  .erou {
+    max-width: 120rem;
+  }
+
+  .titlu-principal {
+    font-size: 4.4rem;
+  }
+
+  .galerie {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**************************/
+/* SUB 1200px (Tablete peisaj) */
+/**************************/
+
+@media (max-width: 75em) {
+  html {
+    /* 9px / 16px  */
+    font-size: 56.25%;
+  }
+
+  .grila {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .titlu-secundar {
+    font-size: 3.6rem;
+  }
+
+  .titlu-tertiar {
+    font-size: 2.4rem;
+  }
+
+  .antet {
+    padding: 0 3.2rem;
+  }
+
+  .nav-principal-lista {
+    gap: 3.2rem;
+  }
+
+  .erou {
+    gap: 4.8rem;
+  }
+
+  .container-testimoniale {
+    padding: 9.6rem 3.2rem;
+  }
+}
+
+/**************************/
+/* SUB 944px (Tablete) */
+/**************************/
+
+@media (max-width: 59em) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+
+  .erou {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .erou-caseta-text,
+  .erou-caseta-img {
+    text-align: center;
+  }
+
+  .erou-img {
+    width: 60%;
+  }
+
+  .mese-livrate {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logouri img {
+    height: 2.4rem;
+  }
+
+  .pas-numar {
+    font-size: 7.4rem;
+  }
+
+  .masa-continut {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .sectiune-testimoniale {
+    grid-template-columns: 1fr;
+  }
+
+  .galerie {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    /* 3/5 = 60% + 2/5 = 40% */
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-formular {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--formular {
+    margin-top: 1.2rem;
+  }
+
+  /* NAVIGARE MOBILĂ */
+  .btn-nav-mobil {
+    display: block;
+    z-index: 9999;
+  }
+
+  .nav-principal {
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* Ascunde navigarea */
+    /* Nu permite NICIO tranziție */
+    /* display: none; */
+
+    /* 1) Ascunde vizual */
+    opacity: 0;
+
+    /* 2) Fă-l inaccesibil pentru mouse și tastatură */
+    pointer-events: none;
+
+    /* 3) Ascunde de cititoarele de ecran */
+    visibility: hidden;
+  }
+
+  .nav-deschis .nav-principal {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-deschis .icon-nav-mobil[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-deschis .icon-nav-mobil[name="menu-outline"] {
+    display: none;
+  }
+
+  .nav-principal-lista {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .nav-principal-link:link,
+  .nav-principal-link:visited {
+    font-size: 3rem;
+  }
+}
+
+/**************************/
+/* SUB 704px (Tablete mai mici) */
+/**************************/
+
+@media (max-width: 44em) {
+  .grila--3-col,
+  .grila--4-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diete {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .titlu-secundar {
+    margin-bottom: 4.8rem;
+  }
+
+  .plan-preturi {
+    width: 100%;
+  }
+
+  .grila--subsol {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .coloana-logo,
+  .coloana-adresa {
+    grid-column: span 3;
+  }
+
+  .coloana-nav {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+}
+
+/**************************/
+/* SUB 544px (Telefoane) */
+/**************************/
+
+@media (max-width: 34em) {
+  .grila {
+    row-gap: 4.8rem;
+  }
+
+  .grila--2-col,
+  .grila--3-col,
+  .grila--4-col {
+    grid-template-columns: 1fr;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .sectiune-erou {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .erou {
+    padding: 0 3.2rem;
+  }
+
+  .erou-img {
+    width: 80%;
+  }
+
+  .logouri img {
+    height: 1.2rem;
+  }
+
+  .pas-caseta-img:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .pas-caseta-img:nth-child(6) {
+    grid-row: 5;
+  }
+
+  .pas-caseta-img {
+    transform: translateY(2.4rem);
+  }
+
+  .testimoniale {
+    grid-template-columns: 1fr;
+  }
+
+  .galerie {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-caseta-text {
+    padding: 3.2rem;
+  }
+
+  .cta-caseta-img {
+    height: 32rem;
+    grid-row: 1;
+  }
+}
+
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+/**************************/
+/* Reparare gap flexbox Safari */
+/**************************/
+
+.fara-flexbox-gap .nav-principal-lista li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.fara-flexbox-gap .element-lista:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.fara-flexbox-gap .icon-lista:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.fara-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.fara-flexbox-gap .masa-atribut:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.fara-flexbox-gap .masa-icon {
+  margin-right: 1.6rem;
+}
+
+.fara-flexbox-gap .subsol-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.fara-flexbox-gap .linkuri-sociale li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.fara-flexbox-gap .subsol-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .fara-flexbox-gap .nav-principal-lista li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .fara-flexbox-gap .nav-principal-lista li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}

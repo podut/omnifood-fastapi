@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Gyoza Japoneze",
+        "category": "Vegetarian",
+        "price": 12.99,
+        "description": "Găluște japoneze crocante umplute cu legume și ciuperci, servite cu sos de soia.",
+        "image": "https://images.unsplash.com/photo-1617196034183-421b4040ed20?auto=format&fit=crop&w=800&q=80",
+        "alt": "Gyoza japoneze crocante pe un platou",
+        "isFeatured": true
+    },
+    {
+        "id": 2,
+        "name": "Salată de Avocado",
+        "category": "Vegan",
+        "price": 10.5,
+        "description": "Salată proaspătă cu avocado, roșii cherry, spanac și dressing de lămâie.",
+        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
+        "alt": "Salată colorată cu avocado și legume proaspete",
+        "isFeatured": true
+    },
+    {
+        "id": 3,
+        "name": "Somon la Grătar",
+        "category": "Pescatarian",
+        "price": 18.99,
+        "description": "File de somon atlantic la grătar cu legume de sezon și sos de lemon-butter.",
+        "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80",
+        "alt": "File de somon la grătar cu legume",
+        "isFeatured": false
+    },
+    {
+        "id": 4,
+        "name": "Buddha Bowl Vegan",
+        "category": "Vegan",
+        "price": 13.5,
+        "description": "Bol cu orez brun, năut prăjit, legume coapte, avocado și tahini.",
+        "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80",
+        "alt": "Buddha bowl colorat cu legume și năut",
+        "isFeatured": true
+    },
+    {
+        "id": 5,
+        "name": "Paste Integrale cu Pesto",
+        "category": "Vegetarian",
+        "price": 11.99,
+        "description": "Paste integrale cu pesto de busuioc proaspăt, roșii cherry și parmezan.",
+        "image": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80",
+        "alt": "Paste cu pesto verde și roșii cherry",
+        "isFeatured": false
+    },
+    {
+        "id": 6,
+        "name": "Pui Paleo la Cuptor",
+        "category": "Paleo",
+        "price": 16.5,
+        "description": "Piept de pui organic la cuptor cu cartofi dulci și broccoli, fără cereale.",
+        "image": "https://images.unsplash.com/photo-1598103442097-8b74394b95c4?auto=format&fit=crop&w=800&q=80",
+        "alt": "Pui la cuptor cu legume paleo",
+        "isFeatured": false
+    },
+    {
+        "id": 7,
+        "name": "Supă Miso cu Tofu",
+        "category": "Vegan",
+        "price": 8.99,
+        "description": "Supă tradițională japoneză miso cu tofu moale, alge wakame și ceapă verde.",
+        "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+        "alt": "Supă miso cu tofu într-un bol",
+        "isFeatured": false
+    },
+    {
+        "id": 8,
+        "name": "Friptură de Vită Paleo",
+        "category": "Paleo",
+        "price": 22.99,
+        "description": "Friptură de vită grass-fed cu sparanghel la grătar și sos de ierburi aromate.",
+        "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+        "alt": "Friptură de vită cu legume la grătar",
+        "isFeatured": true
+    }
+]

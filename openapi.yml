@@ -1,0 +1,220 @@
+openapi: 3.0.3
+
+info:
+  title: Omnifood API
+  description: API FastAPI pentru servirea meniurilor și gestionarea comenzilor Omnifood.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8000
+    description: Server local de dezvoltare
+
+paths:
+
+  /api/status:
+    get:
+      summary: Status server
+      description: Returnează starea serverului și numărul de înregistrări din baza de date.
+      operationId: obtine_status
+      responses:
+        "200":
+          description: Server funcțional
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  numar_meniuri:
+                    type: integer
+                    example: 8
+                  numar_comenzi:
+                    type: integer
+                    example: 3
+
+  /api/menu:
+    get:
+      summary: Listă meniuri
+      description: Returnează toate elementele din meniu. Se poate filtra după categorie.
+      operationId: obtine_meniu
+      parameters:
+        - name: category
+          in: query
+          required: false
+          description: Filtrează după categorie (case-insensitive)
+          schema:
+            type: string
+            example: Vegan
+      responses:
+        "200":
+          description: Listă de elemente din meniu
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ElementMeniu"
+
+  /api/menu/{id_element}:
+    get:
+      summary: Element meniu după ID
+      description: Returnează un singur element din meniu după ID-ul său.
+      operationId: obtine_element_meniu
+      parameters:
+        - name: id_element
+          in: path
+          required: true
+          description: ID-ul elementului din meniu
+          schema:
+            type: integer
+            example: 1
+      responses:
+        "200":
+          description: Elementul găsit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ElementMeniu"
+        "404":
+          description: Elementul nu a fost găsit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Eroare"
+              example:
+                detail: Elementul din meniu nu a fost găsit.
+
+  /api/reservations:
+    post:
+      summary: Creează comandă
+      description: Salvează o comandă nouă în baza de date.
+      operationId: creeaza_comanda
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ComandaCreare"
+            example:
+              contact_name: Ion Popescu
+              contact_email: ion@example.com
+              date: "2026-06-15"
+              time: "14:30:00"
+              guest_count: 2
+              special_requests: Fără gluten, vă rog.
+      responses:
+        "201":
+          description: Comanda a fost creată cu succes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Comanda"
+        "422":
+          description: Date invalide (validare eșuată)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Eroare"
+
+components:
+  schemas:
+
+    ElementMeniu:
+      type: object
+      description: Un element din meniul Omnifood
+      properties:
+        id:
+          type: integer
+          readOnly: true
+          example: 1
+        name:
+          type: string
+          example: Gyoza Japoneze
+        category:
+          type: string
+          example: Vegetarian
+        price:
+          type: number
+          format: float
+          example: 12.99
+        description:
+          type: string
+          example: Găluște japoneze crocante umplute cu legume și ciuperci.
+        image:
+          type: string
+          format: uri
+          example: https://images.unsplash.com/photo-1617196034183-421b4040ed20
+        alt:
+          type: string
+          example: Gyoza japoneze crocante pe un platou
+        isFeatured:
+          type: boolean
+          default: false
+          example: true
+      required:
+        - name
+        - category
+        - price
+        - description
+        - image
+        - alt
+
+    ComandaCreare:
+      type: object
+      description: Date necesare pentru a crea o comandă nouă
+      properties:
+        contact_name:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: Ion Popescu
+        contact_email:
+          type: string
+          format: email
+          example: ion@example.com
+        date:
+          type: string
+          format: date
+          example: "2026-06-15"
+        time:
+          type: string
+          format: time
+          example: "14:30:00"
+        guest_count:
+          type: integer
+          minimum: 1
+          maximum: 20
+          example: 2
+        special_requests:
+          type: string
+          maxLength: 500
+          nullable: true
+          example: Fără gluten, vă rog.
+      required:
+        - contact_name
+        - contact_email
+        - date
+        - time
+        - guest_count
+
+    Comanda:
+      allOf:
+        - $ref: "#/components/schemas/ComandaCreare"
+        - type: object
+          description: Comandă salvată în baza de date (include ID generat)
+          properties:
+            id:
+              type: integer
+              readOnly: true
+              example: 1
+          required:
+            - id
+
+    Eroare:
+      type: object
+      properties:
+        detail:
+          type: string
+          example: Elementul din meniu nu a fost găsit.

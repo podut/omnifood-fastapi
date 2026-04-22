@@ -1,0 +1,20 @@
+# Baze de date SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# Fișiere temporare teste
+backend/_test_*.json
+backend/_test_*.db
+
+# OS
+.DS_Store
+Thumbs.db

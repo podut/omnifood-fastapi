@@ -1,0 +1,687 @@
+/**************************/
+/* ANTET */
+/**************************/
+
+.antet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+
+  /* Pentru că vrem antetul fixat mai târziu */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  position: relative;
+}
+
+.logo {
+  height: 2.2rem;
+}
+
+/**************************/
+/* NAVIGARE */
+/**************************/
+
+.nav-principal-lista {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.nav-principal-link:link,
+.nav-principal-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.nav-principal-link:hover,
+.nav-principal-link:active {
+  color: #cf711f;
+}
+
+.nav-principal-link.nav-cta:link,
+.nav-principal-link.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.nav-principal-link.nav-cta:hover,
+.nav-principal-link.nav-cta:active {
+  background-color: #cf711f;
+}
+
+/* MOBIL */
+.btn-nav-mobil {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-nav-mobil {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+
+.icon-nav-mobil[name="close-outline"] {
+  display: none;
+}
+
+/* NAVIGARE FIXATĂ */
+.fixat .antet {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+.fixat .sectiune-erou {
+  margin-top: 9.6rem;
+}
+
+/**************************/
+/* SECȚIUNEA EROU */
+/**************************/
+
+.sectiune-erou {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.erou {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.erou-descriere {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.erou-img {
+  width: 100%;
+}
+
+.mese-livrate {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+
+.imagini-livrate {
+  display: flex;
+}
+
+.imagini-livrate img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.imagini-livrate img:last-child {
+  margin: 0;
+}
+
+.text-livrat {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.text-livrat span {
+  color: #cf711f;
+  font-weight: 700;
+}
+
+/**************************/
+/* SECȚIUNEA PREZENȚI ÎN */
+/**************************/
+
+.sectiune-prezentati {
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+.titlu-prezentati-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #888;
+}
+
+.logouri {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logouri img {
+  height: 3.2rem;
+  filter: brightness(0);
+  opacity: 50%;
+}
+
+/**************************/
+/* SECȚIUNEA CUM FUNCȚIONEAZĂ */
+/**************************/
+
+.sectiune-cum {
+  padding: 9.6rem 0;
+}
+
+.pas-numar {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+.pas-descriere {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.pas-caseta-img {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pas-caseta-img::before,
+.pas-caseta-img::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pas-caseta-img::before {
+  width: 60%;
+  /* height: 60%; */
+
+  /* 60% din lățimea părintelui */
+  padding-bottom: 60%;
+
+  background-color: #fdf2e9;
+  z-index: -2;
+}
+
+.pas-caseta-img::after {
+  width: 45%;
+  padding-bottom: 45%;
+  background-color: #fae5d3;
+  z-index: -1;
+}
+
+.pas-img {
+  width: 35%;
+  /* z-index: 10; */
+}
+
+/**************************/
+/* SECȚIUNEA MENIURI */
+/**************************/
+
+.sectiune-meniuri {
+  padding: 9.6rem 0;
+}
+
+.masa {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.masa:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.masa-continut {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+
+.masa-etichete {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.eticheta {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.eticheta--vegetarian {
+  background-color: #51cf66;
+}
+.eticheta--vegan {
+  background-color: #94d82d;
+}
+.eticheta--paleo {
+  background-color: #ffd43b;
+}
+
+.masa-titlu {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+
+.masa-atribute {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.masa-atribut {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.masa-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
+
+.masa-img {
+  width: 100%;
+}
+
+.toate-retetele {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/**************************/
+/* SECȚIUNEA TESTIMONIALE */
+/**************************/
+
+.sectiune-testimoniale {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+}
+
+.container-testimoniale {
+  padding: 9.6rem;
+}
+
+.testimoniale {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-nume {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.element-galerie {
+  overflow: hidden;
+}
+
+.element-galerie img {
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.element-galerie img:hover {
+  transform: scale(1.1);
+}
+
+/**************************/
+/* SECȚIUNEA MENIURI */
+/**************************/
+
+.sectiune-preturi {
+  padding: 9.6rem 0;
+}
+
+.plan-preturi {
+  border-radius: 11px;
+
+  width: 75%;
+}
+
+.plan-preturi--incepator {
+  justify-self: end;
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
+}
+
+.plan-preturi--complet {
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-preturi--complet::after {
+  content: "Cel mai avantajos";
+  position: absolute;
+  top: 6%;
+  right: -18%;
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #ffd43b;
+  padding: 0.8rem 8rem;
+  transform: rotate(45deg);
+}
+
+.plan-antet {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.plan-nume {
+  color: #cf711f;
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75;
+  margin-bottom: 3.2rem;
+}
+
+.plan-pret {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+
+.plan-pret span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+
+.plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+
+.plan-inscriere {
+  text-align: center;
+  margin-top: 4.8rem;
+}
+
+.plan-detalii {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.functionalitate-icon {
+  color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
+  background-color: #fdf2e9;
+  margin-bottom: 3.2rem;
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+
+.functionalitate-titlu {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.functionalitate-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/**************************/
+/* SECȚIUNEA CTA */
+/**************************/
+
+.sectiune-cta {
+  /* sus / dreapta / jos / stânga */
+  /* padding: 9.6rem 0 12.8rem 0; */
+
+  /* sus / orizontal / stânga */
+  padding: 4.8rem 0 12.8rem;
+}
+
+.cta {
+  display: grid;
+  /* 2/3 = 66.6% + 1/3 = 33.3% */
+  grid-template-columns: 2fr 1fr;
+  /* background-color: #e67e22; */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  overflow: hidden;
+}
+
+.cta-caseta-text {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: #45260a;
+}
+
+.cta .titlu-secundar {
+  /* color: #45260a; */
+  color: inherit;
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.cta-caseta-img {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.35)
+    ),
+    url("../img/eating.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-formular {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.cta-formular label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.cta-formular input,
+.cta-formular select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-formular input::placeholder {
+  color: #aaa;
+}
+
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+/**************************/
+/* SUBSOL */
+/**************************/
+
+.subsol {
+  padding: 12.8rem 0;
+  border-top: 1px solid #eee;
+}
+
+.grila--subsol {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.coloana-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.subsol-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+
+.linkuri-sociale {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.icon-social {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.drepturi-autor {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #767676;
+  margin-top: auto;
+}
+
+.subsol-titlu {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.contacte {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.adresa {
+  margin-bottom: 2.4rem;
+}
+
+.subsol-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.subsol-link:link,
+.subsol-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.subsol-link:hover,
+.subsol-link:active {
+  color: #555;
+}
+
+/**************************/
+/* MESAJ STATUS FORMULAR  */
+/**************************/
+
+.mesaj-status {
+  grid-column: 1 / -1;
+  font-size: 1.6rem;
+  font-weight: 500;
+  min-height: 2rem;
+  margin-top: 0.8rem;
+}
+
+.mesaj-status--succes {
+  color: #2e7d32;
+}
+
+.mesaj-status--eroare {
+  color: #c62828;
+}
