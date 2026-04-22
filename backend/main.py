@@ -9,6 +9,7 @@ from typing import Any
 import secrets
 
 from fastapi import Depends, FastAPI, HTTPException, Query, status
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.staticfiles import StaticFiles
@@ -296,8 +297,27 @@ def sterge_element_meniu(
     sesiune.commit()
 
 
+# --- Rute pagini frontend (URL-uri curate, fără .html) ---
+
+DIR_FRONTEND = DIR_BAZA.parent / "frontend"
+
+
+@app.get("/admin", include_in_schema=False)
+def pagina_admin() -> FileResponse:
+    return FileResponse(DIR_FRONTEND / "admin.html")
+
+
+@app.get("/meals", include_in_schema=False)
+def pagina_meniuri() -> FileResponse:
+    return FileResponse(DIR_FRONTEND / "meals.html")
+
+
+@app.get("/meal", include_in_schema=False)
+def pagina_detaliu_meniu() -> FileResponse:
+    return FileResponse(DIR_FRONTEND / "meal.html")
+
+
 # --- Servire fișiere statice (frontend) ---
 # Montăm folderul frontend/ la rădăcina serverului DUPĂ toate rutele API,
 # astfel încât /api/... să fie interceptate mai întâi de FastAPI.
-DIR_FRONTEND = DIR_BAZA.parent / "frontend"
 app.mount("/", StaticFiles(directory=DIR_FRONTEND, html=True), name="frontend")

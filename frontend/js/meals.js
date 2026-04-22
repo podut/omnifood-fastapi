@@ -10,7 +10,7 @@ function categorieClasa(cat) {
 
 function genereazaCard(masa) {
   return `
-    <a href="/meal.html?id=${masa.id}" class="masa-link">
+    <a href="/meal?id=${masa.id}" class="masa-link">
       <div class="masa">
         <div class="masa-img-container">
           <img src="${masa.image}" class="masa-img" alt="${masa.alt}" loading="lazy" />

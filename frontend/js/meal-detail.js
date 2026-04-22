@@ -9,8 +9,8 @@ async function incarcaDetaliu() {
 
   if (!id) {
     continut.innerHTML = `
-      <a href="/meals.html" class="detaliu-inapoi">&larr; Înapoi la meniuri</a>
-      <p class="stare-incarcare">ID lipsă. <a href="/meals.html">Vezi toate meniurile.</a></p>
+      <a href="/meals" class="detaliu-inapoi">&larr; Înapoi la meniuri</a>
+      <p class="stare-incarcare">ID lipsă. <a href="/meals">Vezi toate meniurile.</a></p>
     `;
     return;
   }
@@ -20,7 +20,7 @@ async function incarcaDetaliu() {
 
     if (raspuns.status === 404) {
       continut.innerHTML = `
-        <a href="/meals.html" class="detaliu-inapoi">&larr; Înapoi la meniuri</a>
+        <a href="/meals" class="detaliu-inapoi">&larr; Înapoi la meniuri</a>
         <p class="stare-incarcare">Meniul cu ID-ul ${id} nu a fost găsit.</p>
       `;
       return;
@@ -30,7 +30,7 @@ async function incarcaDetaliu() {
     document.title = `Omnifood — ${masa.name}`;
 
     continut.innerHTML = `
-      <a href="/meals.html" class="detaliu-inapoi">&larr; Înapoi la meniuri</a>
+      <a href="/meals" class="detaliu-inapoi">&larr; Înapoi la meniuri</a>
       <div class="detaliu-grid">
         <div class="detaliu-img-container">
           <img src="${masa.image}" alt="${masa.alt}" class="detaliu-img" />
@@ -49,7 +49,7 @@ async function incarcaDetaliu() {
     `;
   } catch {
     continut.innerHTML = `
-      <a href="/meals.html" class="detaliu-inapoi">&larr; Înapoi la meniuri</a>
+      <a href="/meals" class="detaliu-inapoi">&larr; Înapoi la meniuri</a>
       <p class="stare-incarcare">Eroare la încărcarea meniurilor.</p>
     `;
   }
