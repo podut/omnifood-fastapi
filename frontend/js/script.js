@@ -34,20 +34,21 @@ const allLinks = document.querySelectorAll("a:link");
 
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
-    e.preventDefault();
     const href = link.getAttribute("href");
+
+    // Lasă navigarea normală pentru link-uri externe sau pagini
+    if (!href || (!href.startsWith("#") && href !== "#")) return;
+
+    e.preventDefault();
 
     // Derulează înapoi sus
     if (href === "#")
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
-    // Derulează la alte link-uri
-    if (href !== "#" && href.startsWith("#")) {
+    // Derulează la ancora din pagină
+    if (href.startsWith("#")) {
       const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
+      sectionEl?.scrollIntoView({ behavior: "smooth" });
     }
 
     // Închide navigarea mobilă
@@ -124,7 +125,9 @@ function creeazaCardMasa(masa) {
   const div = document.createElement("div");
   div.classList.add("masa");
   div.innerHTML = `
-    <img src="${masa.image}" class="masa-img" alt="${masa.alt}" loading="lazy" />
+    <div class="masa-img-container">
+      <img src="${masa.image}" class="masa-img" alt="${masa.alt}" loading="lazy" />
+    </div>
     <div class="masa-continut">
       <div class="masa-etichete">
         <span class="eticheta ${categorieClasa(masa.category)}">${masa.category}</span>
@@ -220,6 +223,51 @@ formularCta?.addEventListener("submit", async function (e) {
 });
 
 incarcaMeniuri();
+
+///////////////////////////////////////////////////////////
+// Formular admin: adaugă meniu nou prin POST /api/menu
+
+const formularAdmin = document.querySelector("#formular-admin");
+const mesajAdmin = document.querySelector("#mesaj-admin");
+
+formularAdmin?.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const date = new FormData(formularAdmin);
+  const payload = {
+    name: String(date.get("name")).trim(),
+    category: String(date.get("category")),
+    price: Number(date.get("price")),
+    description: String(date.get("description")).trim(),
+    image: String(date.get("image")).trim(),
+    alt: String(date.get("alt")).trim(),
+    isFeatured: date.get("isFeatured") === "on",
+  };
+
+  try {
+    const raspuns = await fetch(`${URL_API}/menu`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (raspuns.status === 201) {
+      const meniu = await raspuns.json();
+      mesajAdmin.textContent = `✓ Meniu "${meniu.name}" adăugat cu succes (ID: ${meniu.id})`;
+      mesajAdmin.className = "mesaj-status mesaj-status--succes";
+      formularAdmin.reset();
+      // Reîncarcă meniurile afișate
+      await incarcaMeniuri();
+    } else {
+      mesajAdmin.textContent = "Nu s-a putut adăuga meniul. Verifică datele.";
+      mesajAdmin.className = "mesaj-status mesaj-status--eroare";
+    }
+  } catch (eroare) {
+    mesajAdmin.textContent = "Eroare de conexiune cu serverul.";
+    mesajAdmin.className = "mesaj-status mesaj-status--eroare";
+    console.error(eroare);
+  }
+});
 
 // https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
 

@@ -324,8 +324,17 @@
   color: #e67e22;
 }
 
+.masa-img-container {
+  height: 24rem;
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
 .masa-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .toate-retetele {
@@ -684,4 +693,76 @@
 
 .mesaj-status--eroare {
   color: #c62828;
+}
+
+/**************************/
+/* SECTIUNEA ADMIN        */
+/**************************/
+
+.sectiune-admin {
+  background-color: #fdf2e9;
+  padding: 9.6rem 0;
+}
+
+.formular-admin {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.admin-rand {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.admin-grup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.admin-grup label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.admin-grup input,
+.admin-grup select {
+  font-size: 1.6rem;
+  font-family: inherit;
+  padding: 1.2rem;
+  border: 1px solid #aaa;
+  border-radius: 9px;
+  background-color: #fff;
+  color: #333;
+  transition: border 0.3s;
+}
+
+.admin-grup input:focus,
+.admin-grup select:focus {
+  outline: none;
+  border: 1px solid #e67e22;
+  box-shadow: 0 0 0 0.4rem rgba(230, 125, 34, 0.2);
+}
+
+.admin-grup--checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.admin-grup--checkbox input {
+  width: 2rem;
+  height: 2rem;
+  accent-color: #e67e22;
+}
+
+@media (max-width: 59em) {
+  .admin-rand {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omnifood &mdash; Detalii meniu</title>
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <link rel="stylesheet" href="css/meals-page.css" />
+  </head>
+  <body>
+    <header class="antet">
+      <a href="/">
+        <img class="logo" src="img/omnifood-logo.png" alt="Logo Omnifood" />
+      </a>
+      <nav class="nav-principal">
+        <ul class="nav-principal-lista">
+          <li><a class="nav-principal-link" href="/#how">Cum funcționează</a></li>
+          <li><a class="nav-principal-link" href="/meals.html">Meniuri</a></li>
+          <li><a class="nav-principal-link" href="/#testimonials">Testimoniale</a></li>
+          <li><a class="nav-principal-link" href="/#pricing">Prețuri</a></li>
+          <li><a class="nav-principal-link nav-cta" href="/#cta">Încearcă gratuit</a></li>
+        </ul>
+      </nav>
+      <button class="btn-nav-mobil">
+        <ion-icon class="icon-nav-mobil" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-nav-mobil" name="close-outline"></ion-icon>
+      </button>
+    </header>
+
+    <main>
+      <section class="sectiune-detaliu-meniu">
+        <div class="container" id="continut-detaliu">
+          <p class="stare-incarcare">Se încarcă...</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="subsol">
+      <div class="container grila grila--subsol">
+        <div class="col-logo-subsol">
+          <a href="/" class="link-logo-subsol">
+            <img class="logo-subsol" src="img/omnifood-logo.png" alt="Logo Omnifood" />
+          </a>
+          <p class="drepturi-autor">
+            Copyright &copy; <span id="an-curent"></span> Omnifood, Inc.<br />
+            Toate drepturile rezervate.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="js/meal-detail.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

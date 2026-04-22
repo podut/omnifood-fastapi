@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omnifood &mdash; Admin</title>
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+
+    <!-- ===== ECRAN LOGIN ===== -->
+    <div class="ecran-login" id="ecran-login">
+      <div class="login-card">
+        <img class="login-logo" src="img/omnifood-logo.png" alt="Omnifood logo" />
+        <h1 class="login-titlu">Panou Admin</h1>
+        <p class="login-subtitlu">Autentifică-te pentru a gestiona meniurile</p>
+
+        <form id="formular-login">
+          <div class="camp">
+            <label for="username">Utilizator</label>
+            <input id="username" type="text" name="username" placeholder="admin" required autofocus />
+          </div>
+          <div class="camp">
+            <label for="password">Parolă</label>
+            <input id="password" type="password" name="password" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn-login">Autentifică-te</button>
+          <p id="eroare-login" class="eroare-login" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== PANOU ADMIN ===== -->
+    <div class="panou-admin ascuns" id="panou-admin">
+
+      <header class="admin-antet">
+        <div class="admin-antet-continut">
+          <img class="admin-logo" src="img/omnifood-logo.png" alt="Omnifood logo" />
+          <span class="admin-titlu">Panou Admin</span>
+        </div>
+        <div class="admin-antet-actiuni">
+          <a href="/" class="btn-secundar">← Site principal</a>
+          <button id="btn-logout" class="btn-logout">Deconectare</button>
+        </div>
+      </header>
+
+      <main class="admin-main">
+
+        <!-- Adaugă meniu -->
+        <section class="sectiune-card">
+          <h2 class="sectiune-titlu">Adaugă Meniu Nou</h2>
+
+          <form id="formular-adauga">
+            <div class="grila-form">
+              <div class="camp">
+                <label for="name">Nume preparat</label>
+                <input id="name" type="text" name="name" placeholder="Curry de Linte" required />
+              </div>
+
+              <div class="camp">
+                <label for="category">Categorie</label>
+                <select id="category" name="category" required>
+                  <option value="">Alege categoria:</option>
+                  <option value="Vegetarian">Vegetarian</option>
+                  <option value="Vegan">Vegan</option>
+                  <option value="Paleo">Paleo</option>
+                  <option value="Pescatarian">Pescatarian</option>
+                </select>
+              </div>
+
+              <div class="camp">
+                <label for="price">Preț (lei)</label>
+                <input id="price" type="number" name="price" step="0.01" min="0" placeholder="14.99" required />
+              </div>
+
+              <div class="camp camp--larg">
+                <label for="description">Descriere</label>
+                <input id="description" type="text" name="description" placeholder="Descriere scurtă a preparatului..." required />
+              </div>
+
+              <div class="camp camp--larg">
+                <label for="image">URL Imagine</label>
+                <input id="image" type="url" name="image" placeholder="https://images.unsplash.com/..." required />
+              </div>
+
+              <div class="camp camp--larg">
+                <label for="alt">Text alternativ imagine</label>
+                <input id="alt" type="text" name="alt" placeholder="Descriere imagine pentru accesibilitate" required />
+              </div>
+
+              <div class="camp camp--checkbox">
+                <input id="isFeatured" type="checkbox" name="isFeatured" />
+                <label for="isFeatured">Afișează în secțiunea principală (Featured)</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primar">Adaugă Meniu</button>
+            <p id="mesaj-adauga" class="mesaj" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <!-- Tabel meniuri existente -->
+        <section class="sectiune-card">
+          <div class="tabel-antet">
+            <h2 class="sectiune-titlu">Meniuri Existente</h2>
+            <button id="btn-reincarca" class="btn-secundar">↻ Reîncarcă</button>
+          </div>
+
+          <div class="tabel-container">
+            <table class="tabel-meniuri" id="tabel-meniuri">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Imagine</th>
+                  <th>Nume</th>
+                  <th>Categorie</th>
+                  <th>Preț</th>
+                  <th>Featured</th>
+                  <th>Acțiuni</th>
+                </tr>
+              </thead>
+              <tbody id="corp-tabel">
+                <tr>
+                  <td colspan="7" class="tabel-stare">Se încarcă...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p id="mesaj-stergere" class="mesaj" aria-live="polite"></p>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- ===== MODAL EDIT ===== -->
+    <div class="modal-overlay ascuns" id="modal-overlay">
+      <div class="modal-card">
+        <div class="modal-antet">
+          <h3 class="modal-titlu">Editează Meniu</h3>
+          <button class="modal-inchide" id="modal-inchide">&times;</button>
+        </div>
+
+        <form id="formular-edit">
+          <input type="hidden" name="id" id="edit-id" />
+
+          <div class="grila-form">
+            <div class="camp">
+              <label for="edit-name">Nume preparat</label>
+              <input id="edit-name" type="text" name="name" required />
+            </div>
+            <div class="camp">
+              <label for="edit-category">Categorie</label>
+              <select id="edit-category" name="category" required>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Paleo">Paleo</option>
+                <option value="Pescatarian">Pescatarian</option>
+              </select>
+            </div>
+            <div class="camp">
+              <label for="edit-price">Preț (lei)</label>
+              <input id="edit-price" type="number" name="price" step="0.01" min="0" required />
+            </div>
+            <div class="camp camp--larg">
+              <label for="edit-description">Descriere</label>
+              <input id="edit-description" type="text" name="description" required />
+            </div>
+            <div class="camp camp--larg">
+              <label for="edit-image">URL Imagine</label>
+              <input id="edit-image" type="url" name="image" required />
+            </div>
+            <div class="camp camp--larg">
+              <label for="edit-alt">Text alternativ imagine</label>
+              <input id="edit-alt" type="text" name="alt" required />
+            </div>
+            <div class="camp camp--checkbox">
+              <input id="edit-isFeatured" type="checkbox" name="isFeatured" />
+              <label for="edit-isFeatured">Featured (apare pe homepage)</label>
+            </div>
+          </div>
+
+          <div class="modal-actiuni">
+            <button type="button" class="btn-secundar" id="modal-anuleaza">Anulează</button>
+            <button type="submit" class="btn-primar btn-primar--mic">Salvează modificările</button>
+          </div>
+          <p id="mesaj-edit" class="mesaj" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

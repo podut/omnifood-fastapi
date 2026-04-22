@@ -57,6 +57,39 @@ paths:
                 items:
                   $ref: "#/components/schemas/ElementMeniu"
 
+  /api/menu:
+    post:
+      summary: Adaugă element în meniu
+      description: Creează un element nou în meniu și îl salvează în baza de date.
+      operationId: creeaza_element_meniu
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ElementMeniuBaza"
+            example:
+              name: Curry de Linte
+              category: Vegan
+              price: 14.99
+              description: Curry aromat cu linte roșie, lapte de cocos și spanac.
+              image: https://images.unsplash.com/photo-1547592166-23ac45744acd
+              alt: Bol cu curry de linte
+              isFeatured: false
+      responses:
+        "201":
+          description: Elementul a fost adăugat cu succes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ElementMeniu"
+        "422":
+          description: Date invalide
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Eroare"
+
   /api/menu/{id_element}:
     get:
       summary: Element meniu după ID
@@ -85,6 +118,26 @@ paths:
                 $ref: "#/components/schemas/Eroare"
               example:
                 detail: Elementul din meniu nu a fost găsit.
+    delete:
+      summary: Șterge element din meniu
+      description: Șterge un element din meniu după ID.
+      operationId: sterge_element_meniu
+      parameters:
+        - name: id_element
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        "204":
+          description: Elementul a fost șters cu succes
+        "404":
+          description: Elementul nu a fost găsit
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Eroare"
 
   /api/reservations:
     post:
@@ -120,6 +173,42 @@ paths:
 
 components:
   schemas:
+
+    ElementMeniuBaza:
+      type: object
+      description: Datele necesare pentru a crea un element de meniu
+      properties:
+        name:
+          type: string
+          example: Curry de Linte
+        category:
+          type: string
+          example: Vegan
+        price:
+          type: number
+          format: float
+          example: 14.99
+        description:
+          type: string
+          example: Curry aromat cu linte roșie și lapte de cocos.
+        image:
+          type: string
+          format: uri
+          example: https://images.unsplash.com/photo-1547592166-23ac45744acd
+        alt:
+          type: string
+          example: Bol cu curry de linte
+        isFeatured:
+          type: boolean
+          default: false
+          example: false
+      required:
+        - name
+        - category
+        - price
+        - description
+        - image
+        - alt
 
     ElementMeniu:
       type: object

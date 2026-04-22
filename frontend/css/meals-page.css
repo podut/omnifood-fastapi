@@ -1,0 +1,166 @@
+/* ===== PAGINA TOATE MENIURILE ===== */
+
+.sectiune-toate-meniurile {
+  padding: 9.6rem 0;
+}
+
+.stare-incarcare {
+  font-size: 1.8rem;
+  color: #888;
+  text-align: center;
+  padding: 4.8rem 0;
+  grid-column: 1 / -1;
+}
+
+/* ===== FILTRE CATEGORII ===== */
+.filtre {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 4.8rem;
+  margin-top: 3.2rem;
+}
+
+.btn-filtru {
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.8rem 2rem;
+  border: 2px solid #e67e22;
+  border-radius: 99px;
+  background: transparent;
+  color: #e67e22;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-filtru:hover,
+.btn-filtru.activ {
+  background: #e67e22;
+  color: #fff;
+}
+
+/* ===== CARD LINKABIL ===== */
+.masa-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border-radius: 11px;
+  transition: transform 0.3s;
+}
+
+.masa-link:hover {
+  transform: translateY(-1.2rem);
+}
+
+.masa-link .masa {
+  height: 100%;
+  transition: box-shadow 0.3s;
+}
+
+.masa-link:hover .masa {
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.1);
+}
+
+/* ===== PAGINA DETALIU ===== */
+.sectiune-detaliu-meniu {
+  padding: 9.6rem 0;
+}
+
+.detaliu-inapoi {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #e67e22;
+  text-decoration: none;
+  margin-bottom: 3.2rem;
+  font-weight: 500;
+}
+
+.detaliu-inapoi:hover {
+  color: #cf711f;
+}
+
+.detaliu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.4rem;
+  align-items: start;
+}
+
+.detaliu-img-container {
+  border-radius: 11px;
+  overflow: hidden;
+  background: #f3f4f6;
+  aspect-ratio: 4 / 3;
+}
+
+.detaliu-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detaliu-categorie {
+  margin-bottom: 1.6rem;
+}
+
+.detaliu-titlu {
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2.4rem;
+  line-height: 1.2;
+}
+
+.detaliu-descriere {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 3.2rem;
+}
+
+.detaliu-pret {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #e67e22;
+  margin-bottom: 3.2rem;
+}
+
+.detaliu-featured {
+  display: inline-block;
+  background: #fdf2e9;
+  color: #cf711f;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 99px;
+  margin-bottom: 3.2rem;
+}
+
+.detaliu-btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.detaliu-btn:hover {
+  background: #cf711f;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 75em) {
+  .detaliu-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
